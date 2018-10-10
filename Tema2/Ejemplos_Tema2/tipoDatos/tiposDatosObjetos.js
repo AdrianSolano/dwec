@@ -2,7 +2,7 @@
 console.log("EJEMPLOS DE TIPOS OBJETOS");
 
 function ejemplosTiposObjetos(){
-	ejemplosTiposPredefinidosJavascript();
+	ejemplosTiposPredefinidosJavascript(ejemplosPrototype());
 	ejemplosTiposDefinidosProgramador();
 	ejemplosTiposArrays();
 	ejemplosTiposEspeciales();
