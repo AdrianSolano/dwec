@@ -31,18 +31,10 @@ function expresionEmail(string) {
 }
 //console.log(expresionEmail("adrysolfer@gmail.es"))
 
-function numeroVeces(string) {
-
-    if (string.length) {
-        mensaje ="";
-    }else{
-        mensaje ="";
-    }
-}
 
 function cuentaPalabras(frase, palabra) {
     let contador = 0;
-    let exp = new RegExp(palabra,"g");
+    let exp = new RegExp(`\\s+${palabra}\\s\\W`,"g");
     let res = frase.match(palabra);
     if (res !==null) {
         res.length;
