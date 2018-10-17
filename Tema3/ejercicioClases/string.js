@@ -12,16 +12,15 @@ function intercambiar(string){
 
 
 
-function añadirCadena(string,posicion){
-    let cadenaAñadir= " de Pepe ";
-    if (typeof()) {
-        
+function insertarTexto(cadena_principal, texto_incluir, pos) {
+    if(typeof(pos) == "undefined") {
+    pos = 0;
     }
-    for (let i = posicion; i <= string.length; i++) {
-        string = cadenaAñadir.concat(cadenaAñadir);
+    if(typeof(texto_incluir) == "undefined") {
+    texto_incluir= '';
     }
-    return string;
-}
+    return`${cadena_principal.slice(0, pos)}${texto_incluir}${cadena_principal.slice(pos)}`;
+    }
 
 
 function reducirTamañoCadena(string) {
@@ -30,4 +29,4 @@ function reducirTamañoCadena(string) {
 
 let frase = "Este Es EL ejemplO"
 //console.log(intercambiar(frase))
-console.log(añadirCadena(frase))
+console.log(insertarTexto(frase,"PEPE",18))
