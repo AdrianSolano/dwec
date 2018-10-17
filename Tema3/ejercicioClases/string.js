@@ -23,7 +23,7 @@ function insertarTexto(cadena_principal, texto_incluir, pos) {
     }
 
 
-function reducirTamañoCadena(string) {
+function reducirTamannCadena(string) {
     return string.split("").splice(0,num_palabras).join(" ");
 }
 
