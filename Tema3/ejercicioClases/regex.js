@@ -43,4 +43,74 @@ function cuentaPalabras(frase, palabra) {
 
     return res;
 }
-console.log(cuentaPalabras("Estoy cansado de esta clase de cliente","denada"));
+//console.log(cuentaPalabras("Estoy cansado de esta clase de cliente","denada"));
+
+
+
+function esHexadecimal(string) {
+    let expr = /^#?([0-9a-fA-F]{6})|([0-9a-fA-F]{3})$/;
+    let es = false;
+
+    if (expr.test(string)) {
+        es= true + " Es hexadecimal";
+    }else{ 
+        es =false + " No es hexadecimal ";
+    }
+    return es;
+}
+
+// console.log(esHexadecimal("#1f2f3f"))
+// console.log(esHexadecimal("d"))
+
+function decodeWapo(URI) {
+    let mensaje="";
+    if(decodeURI(URI)){
+        mensaje = URI;
+    }
+    if (decodeURIComponent(URI)) {
+        mensaje = URI;
+    }
+    if (encodeURI(URI)) {
+        mensaje = URI;
+    }
+    return mensaje;
+    
+}
+
+// console.log(decodeWapo("https://pruebas.com/myPrueba.asp?name=jorge&apellido=baron"))
+
+function sumaNumeroCadena(string) {
+    let arr = string.split(" ");
+    let sumres = 0;
+    for (const string of arr) {
+        if (isFinite(string)) {
+            sumres += parseInt(string)
+        }
+    }
+
+    return sumres;
+    
+}
+
+//console.log(sumaNumeroCadena("Esto es 1 prueba . Mañana serán 2"));
+
+function eliminarCaracteres(string1,string2) {
+try{
+    let expr = /[0-9]+/g;
+    let resultado = string1.match(expr) | string2.match(expr);
+    let div = "";
+
+    for (const string1 of resultado) {
+        if (isFinite(string1)){
+            div = string1/string2;
+        }
+    }
+    return div;
+
+}catch(err){
+
+}
+}
+
+console.log(eliminarCaracteres("pepito34essuperguay","pepito2es mo"));
+// 34/2=17 34/0=0.
