@@ -172,6 +172,6 @@ function creaDividor(x){
     }
     return dividirX;
 }
-let principal34 = principal(3,4)
+let principal34 = creadorPrincipal(3,4)
 console.log(principal34(10,20))
 
