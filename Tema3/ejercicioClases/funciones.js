@@ -138,10 +138,12 @@ var suma10 = creaSumador(10);
 
 function u(numero1){
     let div1=3;
-    if (div1/numero1) {
-        
-    }else if (div1 % 0.0) {
-        
+    let div2=4;
+
+    div1 = numero1/div1;
+
+    if (div1 === 0.0){
+        return div1=3;
     }
 
     return div1;
