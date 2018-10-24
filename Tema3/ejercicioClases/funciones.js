@@ -136,16 +136,40 @@ var suma10 = creaSumador(10);
 // var execute = sumarNumeros(10, 40);
 // setTimeout(execute, 3000);
 
-function u(numero1){
-    let div1=3;
-    let div2=4;
+function principal(a,b){
+    let dividor3 = creaDividor(3);
+    let dividor4 = creaDividor(4);
+    let numero1 = dividor3(a);
+    let numero2 = dividor4(b);
+    return numero1 + numero2;
 
-    div1 = numero1/div1;
-
-    if (div1 === 0.0){
-        return div1=3;
-    }
-
-    return div1;
 }
-console.log(u(9))
+function creadorPrincipal(x,y){
+    return function(a,b){
+        let dividirX = creaDividor(x);
+        let dividirY = creaDividor(y);
+
+        return dividirX(a)+ dividirY(b);
+    }
+}
+function dividor3(y){
+    return function(y){
+        if (y ===0 || y % 3 !==0 ) {
+            return y;
+        }else{
+            return dividor3(y/3);
+        }
+    }
+}
+
+function creaDividor(x){
+    function dividirX(y){
+        if (y ===0 || y % x !==0 ) {
+            return y;
+        }else{
+            return dividirX(y/x);
+        }
+    }
+    return dividirX;
+}
+console.log(creadorPrincipal(3,3))
