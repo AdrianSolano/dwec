@@ -93,7 +93,7 @@ function sumaNumeroCadena(string) {
 }
 
 //console.log(sumaNumeroCadena("Esto es 1 prueba . Mañana serán 2"));
-
+//Excepciones
 function eliminarCaracteres(string1,string2) {
 try{
     let expr = /[0-9]+/g;
