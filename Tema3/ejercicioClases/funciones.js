@@ -144,6 +144,7 @@ function principal(a,b){
     return numero1 + numero2;
 
 }
+
 function creadorPrincipal(x,y){
     return function(a,b){
         let dividirX = creaDividor(x);
@@ -152,6 +153,7 @@ function creadorPrincipal(x,y){
         return dividirX(a)+ dividirY(b);
     }
 }
+
 function dividor3(y){
     return function(y){
         if (y ===0 || y % 3 !==0 ) {
