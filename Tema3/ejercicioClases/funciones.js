@@ -176,4 +176,20 @@ function creaDividor(x){
 }
 let principal34 = creadorPrincipal(3,4)
 console.log(principal34(10,20))
+//Funciones arrow
+let comparar = (x,y)=>{
+    (x>y)
+}
+
+function compararl(x,y){
+    let res=0;
+    if (x>y) {
+        res=1
+    }else if(x<y){
+        res=-1;
+    }
+    return res;
+}
+console.log(compararl(12,1))
+
 
