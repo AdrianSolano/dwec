@@ -19,10 +19,11 @@ function incrementar(voto){
 function arrayDefinitivoMap(numeroVot){
     return numeroVot ;
 }
-function mediaVotos(){
-    let suma = numeroVot;
-    let medio =suma/3;
-    
+
+function mediaVotos(total,voto){
+    let suma = voto;
+    let media =suma/3;
+    return suma = total+voto;
 }
 
 var vot1 = new votos(1);
@@ -37,6 +38,8 @@ console.log(arrayVotos.some(votosMayoresCuatro));
 arrayVotos.forEach(incrementar);
 console.log(arrayVotos);
 console.log(arrayVotos.map(arrayDefinitivoMap))
+
+console.log(arrayVotos.reduce(mediaVotos));
 
 
 
