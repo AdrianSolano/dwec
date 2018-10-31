@@ -59,4 +59,83 @@ function invertido(x,prin,fin) {
    
     return res;
 }
-console.log(invertido(numeros,3,10))
+// console.log(invertido(numeros,3,10))
+
+
+function esAdulto(edad) {
+    return edad >= 18;
+}
+// console.log(edades.filter(esAdulto) );
+//Funcion flecha
+// console.log(edades.filter( x => x >=18) );
+
+function impar(numero) {
+    if (numero % 2) {
+        return numero + " es impar";
+    }else{
+        return numero + " es par"
+    }
+}
+// console.log(impar(3))
+
+
+var arr =[1,2,undefined,null,1/0,"Prueba","1"]
+
+function arrey(ar) {
+    ar=arr;
+}
+//console.log(arr.filter(arrey));
+
+class voto{
+    constructor(bueno){
+        this.bueno=bueno;
+    }
+}
+var vot1 = new voto(true);
+var vot2 = new voto(false);
+var vot3 = new voto(true);
+
+var votos = [vot1,vot2];
+// console.log(votos.filter());
+
+var edades= [15, 22 ,16, 40,18];
+// console.log(edades.find(esAdulto));
+// console.log(edades.find( x => x >=39));
+
+var cad1 = "Holaquetal";
+var cad2 = "Hola que tal";
+var cad3 = "Hola ";
+
+let arrayCadenas = [cad2,cad1,cad3];  
+
+function cadenas(cad) {
+    let arr= cad.match(/([\s])/g);
+    return arr === null;
+}
+
+// console.log(arrayCadenas.find(cadenas));
+// console.log(numeros.some(impar))
+
+var edades= [15, 22 ,16, 40,18];
+function calcularEdadPerro(edad){
+console.log(edad * 7);
+}
+// edades.forEach(calcularEdadPerro);
+
+function sumarEdades(total,num) {
+    return total + num;
+}
+console.log(edades.reduce(sumarEdades));
+
+function calcularEdadPerro2(edad){
+    return edad * 7;
+}
+console.log(edades.map(calcularEdadPerro2));
+
+function sumarEdades(total,num) {
+    return total + num;
+}
+console.log(edades.reduce(sumarEdades));
+
+
+
