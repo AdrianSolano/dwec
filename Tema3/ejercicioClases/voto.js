@@ -22,8 +22,8 @@ function arrayDefinitivoMap(numeroVot){
 
 function mediaVotos(total,voto){
     let suma = voto;
-    let media =suma/3;
-    return suma = total+voto;
+    let media = suma / 3;
+    return media = total+voto;
 }
 
 var vot1 = new votos(1);
@@ -40,6 +40,26 @@ console.log(arrayVotos);
 console.log(arrayVotos.map(arrayDefinitivoMap))
 
 console.log(arrayVotos.reduce(mediaVotos));
+
+
+function nombre(){
+    console.log("Adrian Solano")
+}
+
+
+function incrementoPrincipal(x){
+return function incremento(){
+    contador += x; console.log(contador)
+}
+}
+
+
+
+function nombre(nombre){
+    return function mostrar(){  console.log(nombre)}
+}
+
+console.log(nombre())
 
 
 
