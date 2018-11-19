@@ -77,3 +77,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 console.log("Ya se han asociado todos los eventos");
+
+function mostrarHola(event){
+    event.preventDefault();
+    alert('hola google uwu')
+}
+
+var aHola = document.getElementById("holagoogle");
+aHola.addEventListener("onclick",mostrarHola);

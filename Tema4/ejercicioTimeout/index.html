@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio Formulario</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+<div id="principal">
+    <div id="ejemploEventos">
+        <form id="formulario" action="correcto.html" method="POST">
+
+            <div class="elementoFormulario">
+                <div class="etiqueta">
+                    <label for="nombre" >Nombre Proye:</label>
+                </div>
+                <input id="nombre" type="text"/>
+            </div>
+               
+            <div class="elementoFormulario">
+                <div class="etiqueta">
+                    <label for="duracion" >Duración:</label>
+                </div>
+                <input id="duracion" type="number"/>
+            </div>
+
+            <div class="elementoFormulario">
+                <div class="etiqueta">
+                    <label for="jefeProyecto">Jefe Proyecto:</label>
+                </div>
+                <input id="jefeProyecto" type="text"/>
+            </div>
+
+            <div class="elementoFormulario">
+                <label for="aceptarTerminos">Aceptar Terminos</label>
+                <input type="checkbox" name="aceptarTerminos" id="aceptarTerminos" unchecked>
+            </div>
+            
+            <div class="elementoFormulario">
+            <label for="tipoProyecto">Tipo de proyecto</label>
+            <select name="tipoProyecto" id="tipoProyecto">
+                <option value="#">--Opcion--</option>
+                <option value="aplicacionWeb">Aplicacion web</option>
+                <option value="redes">Redes</option>
+                <option value="movil">Movil</option>
+            </select>
+            </div>
+
+            <div class="botones">
+                <button >Enviar</button>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</body>
+<script src="eventoTime.js"></script>
+</html>
