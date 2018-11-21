@@ -38,7 +38,7 @@ function comprobarCampo(event,funcionComprobar){
     clearTimeout(timeout);
     timeout = setTimeout(function () {
         validarCampo(event.target,funcionComprobar);
-    }, 500);
+    }, 1000);
 };
 
 function validarCampo(input,funcionValidacion){
