@@ -24,8 +24,7 @@ $("#nombre").change(function(){
         error.push("Error no puede estar vacio ");
     }else{
         let expresion = /^[a-zA-Z]{2,}$/g;
-
-    return error
+    return comprobarExpresionRegular(expresion,campo);
     }
     return campo;
 });
@@ -37,6 +36,7 @@ $("#apellido").change(function(){
         error.push("Error no puede estar vacio ");
     }else{
         let expresion = /^[a-zA-Z]{2,}$/g;
+        return comprobarExpresionRegular(expresion,campo);
     }
     return error;
 });
