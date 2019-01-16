@@ -63,7 +63,7 @@ let inputEdad= document.getElementById("edad");
 inputEdad.onblur = comprobarEdad; 
 
 
-//Con document.addEventListener
+//Con document.addEventListenercom
 let inputTelefono = document.getElementById("telefono");
 inputTelefono.addEventListener("change",comprobarTelefono);
 
