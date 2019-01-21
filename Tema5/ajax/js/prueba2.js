@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    mostrarNombre();
-    mostrarNombre2();
+    // mostrarNombre();
+    // mostrarNombre2();
+    // mostrarNombrePost();
+    mostrarLibrosJson();
 });
 function comprobarEstadoPeticion() {
     switch (this.readyState) {
@@ -29,7 +31,7 @@ function mostrarNombre() {
     boton.addEventListener('click', function () {
         xhr = new objetoXHR();
 
-        xhr.open('GET', 'servidor/datos2.php?edad=21&trabajo=ninguno', false);
+        xhr.open('GET', 'servidor/datos2.php?edad=21&trabajo=blyat', false);
 
         // xhr.onreadystatechange = comprobarEstadoPeticion;
 
@@ -49,12 +51,52 @@ function mostrarNombre2() {
     boton.addEventListener('click', function () {
         xhr = new objetoXHR();
 
-        xhr.open('GET', 'servidor/datos2.php?edad=21&trabajo=ninguno', true);
+        xhr.open('GET', 'servidor/datos2.php?edad=21&trabajo=blyat', true);
 
         xhr.onreadystatechange = comprobarEstadoPeticion;
 
         xhr.send(null);
 
+
+        let respuesta = xhr.responseText;
+
+        let div = document.getElementById("resultado2");
+        div.appendChild(document.createTextNode(respuesta));
+
+    })
+}
+
+function mostrarNombrePost() {
+    let boton = document.getElementById("boton2");
+    boton.addEventListener('click', function () {
+        xhr = new objetoXHR();
+
+        xhr.open('POST', 'servidor/datos2.php', true);
+
+        xhr.onreadystatechange = comprobarEstadoPeticion;
+
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.send('nombre=Adrian&apellido=Solano Fernandez &edad=21');
+
+        let respuesta = xhr.responseText;
+
+        let div = document.getElementById("resultado2");
+        div.appendChild(document.createTextNode(respuesta));
+
+    })
+}
+
+function mostrarLibrosJson() {
+    let boton = document.getElementById("boton2");
+    boton.addEventListener('click', function () {
+        xhr = new objetoXHR();
+
+        xhr.open('GET', 'servidor/datosJSON2.php', true);
+
+        xhr.onreadystatechange = comprobarEstadoPeticion;
+
+        xhr.send(null);
 
         let respuesta = xhr.responseText;
 
