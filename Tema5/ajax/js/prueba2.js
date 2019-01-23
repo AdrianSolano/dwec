@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // mostrarNombre();
     // mostrarNombre2();
     // mostrarNombrePost();
-    mostrarLibrosJson();
+    // mostrarLibrosJson();
 });
 function comprobarEstadoPeticion() {
     switch (this.readyState) {
@@ -24,7 +24,6 @@ function comprobarEstadoPeticion() {
             break;
     }
 }
-
 
 function mostrarNombre() {
     let boton = document.getElementById("boton");
@@ -99,9 +98,20 @@ function mostrarLibrosJson() {
         xhr.send(null);
 
         let respuesta = xhr.responseText;
-
-        let div = document.getElementById("resultado2");
-        div.appendChild(document.createTextNode(respuesta));
+        var resultados= JSON.parse(respuesta)
+        let salida="<table border='1'><tr><th>NOMBRE</th><th>AUTOR</th><th>GENERO</th><th>FECHA</th></tr>";
+    
+        for (let i=0; i < resultados.length; i++){
+            let objeto = resultados[i];
+            salida+="<tr><td>"+objeto.nombre+"</td><td>"+
+            objeto.genero+"</td><td>"+objeto.autor+"</td><td>"+
+            objeto.fecha +"</td></tr>";
+        }
+    
+        salida+="</table>";
+    
+        let div = document.getElementById("resultado2").innerHTML=salida;        
+        div.appendChild(document.createTextNode(resultados));
 
     })
 }
