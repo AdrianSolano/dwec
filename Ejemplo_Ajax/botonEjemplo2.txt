@@ -1,0 +1,28 @@
+  $.ajax({
+            url: "../Ejemplo_Ajax/servidor/datos.php",
+            method: "POST",
+            data:{num:$("#num1").val()},
+            type: "JSON",
+            beforeSend: function () {
+                $("#spinner").show();
+                procesos.push(true);
+            }
+        })
+        .done(function(respuesta){
+           if(respuesta === "1"){
+               alert("Numero correcto");
+           }else{
+               alert("Numero incorrecto");
+           }  
+           let respuesta2= respuesta;
+           if(respuestaPrimero && respuestaSegundo){
+               submit();
+           }
+        })
+        .fail(function () {
+            alert("ERROR EN LA PETICION");
+        })
+        .always(function () {
+            $("#spinner").hide();
+        })
+        

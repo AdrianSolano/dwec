@@ -1,4 +1,6 @@
 var procesos = [];
+let numero1Correcto = false;
+let numero2Correcto = false;
 
 $(function () {
 
@@ -32,48 +34,27 @@ $(function () {
 
     $('#num1').change(function(){
         validarnumero(this); 
-    })
+    });
 
     $('#num2').change(function(){
         validarnumero(this);
-    })
-    $('#botonEjemplo2').submit(function(event){
+    });
+
+    $('#formulario').submit(function(event){
         event.preventDefault();
-        $.ajax({
-            url: "datos.php",
-            method: "POST",
-            data:{num:$("#num1").val()},
-            type: "JSON",
-            beforeSend: function () {
-                $("#spinner").show();
-                procesos.push(true);
-            }
-        })
-        .done(function(respuesta){
-           if(respuesta === "1"){
-               alert("Buen numero");
-           }else{
-               alert("Mal numero");
-           }  
-           let respuesta2= respuesta;
-           if(respuestaPrimero && respuestaSegundo){
-               submit();
-           }
-        })
-        .fail(function () {
-            alert("ERROR EN LA PETICION");
-        })
-        .always(function () {
-            $("#spinner").hide();
-        })
+        numero1Correcto = false;
+        numero2Correcto = false;
+        validarnumero(document.getElementById("#num1"));
+        validarnumero(document.getElementById("#num2"));
         
-    })
+
+    });
 
     function validarnumero(input){
             $.ajax({
-                url: "datos.php",
+                url: "../Ejemplo_Ajax/servidor/datos.php",
                 method: "POST",
-                data:{num:input.value},
+                data:{num:$(input).val()},
                 type: "JSON",
                 beforeSend: function () {
                     $("#spinner").show();
@@ -82,11 +63,18 @@ $(function () {
             })
             .done(function(respuesta){
                if(respuesta === "1"){
-                   alert("Buen numero");
-               }else{
-                   alert("Mal numero");
-               }  
-               procesos.pop();
+                   $(input).addClass("Correcto");
+                   if($(input).attr("id")=== "num1"){
+                        numero1Correcto = true;
+                   }else if($(input).attr("id")=== "num2"){
+                        numero2Correcto = true;
+                    }
+                    comprobarFormulario();
+                }else{
+                   $(input).addClass("incorrecto");
+                   
+               }
+               procesos.pop(); 
             })
             .fail(function () {
                 alert("ERROR EN LA PETICION");
@@ -94,6 +82,12 @@ $(function () {
             .always(function () {
                 $("#spinner").hide();
             })
+    }
+
+    function comprobarFormulario(){
+        if(numero1Correcto && numero2Correcto){
+            document.getElementById("#formulario").submit();
+        }
     }
     
 });
