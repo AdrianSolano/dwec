@@ -2,6 +2,7 @@ body>div{
     border:2px solid black;
 }
 
+
 .spinner {
     border:0px;
     width: 40px;
@@ -52,4 +53,16 @@ body>div{
           transform: scale(1.0);
           -webkit-transform: scale(1.0);
       }
+}
+
+.inputCorrecto{
+    border:1px solid green;
+}
+
+.inputErroneo{
+    border:1px solid red;
+}
+
+.divErrores{
+    color:red;
 }

@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
+<html>
+<head lang="es">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ajax</title>
+    <title>Ejemplo Ajax</title>
     <link rel="stylesheet" href="../Ejemplo_Ajax/css/css.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
     <script src="../Ejemplo_Ajax/js/nuevo.2.js" defer></script>
 </head>
-
 <body>
-    <div id="spinner" class="spinner">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
-    </div>
-    <!-- Jquery -->
+<div id="spinner" class="spinner">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+</div>
+<div>
+    <h1>EJEMPLO DE VALIDACION</h1>
     <div>
-        <h5>Execute order 66</h5>
-        <button id="botonEjemplo">Ejecutar</button>
+        <form id="formulario" action="http:://www.google.es" method="POST">
+            <div>
+                <label for="numero1">NUMERO 1:</label>
+                <input id="numero1" name="numero1" value="" type="text" />
+                <div class="divErrores">
+                    
+                </div>
+            </div>
+            <div>
+                <label for="numero2">NUMERO 2:</label>  
+                <input id="numero2" name="numero2" value="" type="text" />
+                <div class="divErrores">
+
+                </div>
+            </div>
+            <button id="boton">BOTON DE ENVIO</button>  
+        </form>
     </div>
     <div>
-        <h5>Resultado:</h5>
+        <h1>Resultados:</h1>
         <div id="resultado"></div>
-    </div>
-    </div>
-    <div>
-    <form  id="formulario" action="www.google.es">
-        <label>|Suma|</label>
-        <label for="num1">Numero 1</label>
-        <input type="text" id="num1">
-        <label for="num2">Numero 2</label>
-        <input type="text" id="num2">
-        <label for="res">Resultado Suma</label>
-        <input type="text" id="botonEjemplo2">
-        <button id="botonEjemplo2">Ejecutar</button>
-    </form>
-    </div>
-
+    </div>    
+</div>
 </body>
-
 </html>
